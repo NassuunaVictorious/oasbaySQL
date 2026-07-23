@@ -1,0 +1,6 @@
+The original code was vulnerable because it directly combined user input with an SQL query.
+ This allowed an attacker to insert SQL commands into the input field and change how the database interpreted the query. 
+ The fixed version uses parameterized queries, which treats user input as data instead of executable SQL code. 
+ Frontend and backend validation add another layer of protection by preventing invalid input before it reaches the database.
+ Also instead of having inline html and css i put that in login.html and style.css respectively
+ I also used custom regex for validation and also did frontend regex in html

