@@ -35,45 +35,30 @@ role TEXT
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/login.html");
 });
-//INSECURE LOGIN
+//SECURE LOGIN
 // A simple login form to test with
 // goes inside server.js, above app.listen()
 app.post('/login',(req,res)=>{
 
-
 const {username,password}=req.body;
-
-
-
 // Backend validation
-
 if(!validateUsername(username)){
 
     return res.send("Invalid username format");
 
 }
-
-
 if(!validatePassword(password)){
 
     return res.send("Invalid password format");
 
 }
-
-
-
 // Parameterized query
-
 const query =
 "SELECT * FROM technicians WHERE username=? AND password=?";
-
-
 db.get(
 query,
 [username,password],
 (err,row)=>{
-
-
 if(err){
 
 return res.send("Database error");
@@ -98,9 +83,9 @@ return res.send("Invalid login");
 
 });
 // >>> the /login route from Step 1 goes here <<<
-app.listen(3000, () => console.log('Running at http://localhost:3000'));
+app.listen(5000, () => console.log('Running at http://localhost:5000'));
 
-//SECURE LOGIN
+//INSECURE LOGIN
 // server.js - replace the /login route with this SAFE version
 // placeholders (?) keep data separate from SQL
 

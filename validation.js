@@ -9,15 +9,11 @@ function validateUsername(username){
     return namePattern.test(username);
 
 }
-
-
 function validatePassword(password){
 
     return passwordPattern.test(password);
 
 }
-
-
 
 module.exports = {
 
